@@ -3,7 +3,7 @@ import {
   BadRequestException,
   PipeTransform,
 } from '@nestjs/common';
-import { TaskStatus } from '../task.model';
+import { TaskStatus } from '../task-status.enum';
 
 export class TaskStatusValidationPipe implements PipeTransform {
   readonly allowedStatuses = [
@@ -12,6 +12,7 @@ export class TaskStatusValidationPipe implements PipeTransform {
     TaskStatus.DONE,
   ];
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   transform(value: any, metadata: ArgumentMetadata): any {
     value = value.toUpperCase();
 
