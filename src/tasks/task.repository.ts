@@ -15,7 +15,9 @@ export class TaskRepository extends Repository<Task> {
     }
 
     if (search) {
-      query.where('task.title LIKE :search OR task.description LIKE :search' , { search: `%${search}%` })
+      query.where('task.title LIKE :search OR task.description LIKE :search', {
+        search: `%${search}%`,
+      });
     }
 
     return await query.getMany();
