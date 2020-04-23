@@ -1,2 +1,5 @@
+server:
+  origin: 'http://alexeii-nestjs-todo-frontend.s3-website.us-east-2.amazonaws.com'
+
 db:
   synchronize: false
